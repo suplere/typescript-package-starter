@@ -15,7 +15,7 @@
     "npm packages",
     "boilerplate"
   ],
-  "author": "Dale Nguyen",
+  "author": "Evžen Šupler",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -36,6 +36,6 @@
     "node": ">=8"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@dalenguyen"
+    "registry": "https://npm.pkg.github.com/@suplere"
   }
 }
