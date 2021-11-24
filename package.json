@@ -19,7 +19,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dalenguyen/typescript-package-starter.git"
+    "url": "git+https://github.com/suplere/typescript-package-starter.git"
   },
   "devDependencies": {
     "@types/chai": "^4.2.22",
