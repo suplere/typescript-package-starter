@@ -1,0 +1,114 @@
+/////////////////////
+///// Storage
+/////////////////////
+
+export type StorageUploadParams = {
+  file: File;
+  id?: string;
+  name?: string;
+  bucketId?: string;
+};
+
+export type StorageUploadResponse =
+  | { fileMetadata: FileResponse; error: null }
+  | { fileMetadata: null; error: Error };
+
+export type StorageGetUrlParams = {
+  fileId: string;
+};
+
+export type StorageGetPresignedUrlParams = {
+  fileId: string;
+};
+
+export type StorageGetPresignedUrlResponse =
+  | { presignedUrl: { url: string; expiration: number }; error: null }
+  | { presignedUrl: null; error: Error };
+
+export type StorageDeleteParams = {
+  fileId: string;
+};
+
+export type StorageDeleteResponse = { error: Error | null };
+
+/////////////////////
+///// API
+/////////////////////
+
+type FileResponse = {
+  id: string;
+  name: string;
+  size: number;
+  mimeType: string;
+  etag: string;
+  createdAt: string;
+  bucketId: string;
+};
+
+export type ApiUploadParams = {
+  file: FormData;
+  id?: string;
+  name?: string;
+  bucketId?: string;
+};
+
+export type ApiUploadResponse =
+  | { fileMetadata: FileResponse; error: null }
+  | { fileMetadata: null; error: Error };
+
+export type ApiGetPresignedUrlParams = {
+  fileId: string;
+};
+
+export type ApiGetPresignedUrlResponse =
+  | { presignedUrl: { url: string; expiration: number }; error: null }
+  | { presignedUrl: null; error: Error };
+
+export type ApiDeleteParams = {
+  fileId: string;
+};
+
+export type MetaObject = {
+  token?: string;
+}
+
+export type HBPS3MetaData = {
+  key: string;
+  AcceptRanges?: string;
+  LastModified?: string;
+  ContentLength?: number;
+  ETag?: string;
+  ContentType?: string;
+  Metadata?: MetaObject
+}
+
+export type StorageMetadataResponse = {
+  metadata: HBPS3MetaData | null,
+  error: Error | null
+}
+
+export type ApiDeleteResponse = { error: Error | null };
+
+export type StorageUploadFile = {
+  path: string;
+  file: File;
+  onUploadProgress: any | undefined;
+};
+
+export type StorageUploadString = {
+  path: string;
+  data: string;
+  type: "raw" | "data_url";
+  metadata: { "content-type": string } | null;
+  onUploadProgress: any | undefined;
+};
+
+/////////////////////
+///// MISC
+/////////////////////
+
+export type UploadHeaders = {
+  "x-nhost-bucket-id"?: string;
+  "x-nhost-file-id"?: string;
+  "x-nhost-file-name"?: string;
+};

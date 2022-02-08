@@ -1,19 +1,17 @@
 {
-    "compilerOptions": {
-      "lib": ["es2017"],
-      "module": "commonjs",
-      "noImplicitReturns": true,    
-      "esModuleInterop": true,
-      "outDir": "dist",
-      "sourceMap": true,
-      "target": "es5",
-      "declaration": true,
-      "types": [
-        "mocha", "node"
-      ]
-    },
-    "compileOnSave": true,
-    "include": [
-      "src"
-    ]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "src/**/*.test.ts", "test"],
+  "compilerOptions": {
+    "lib": ["es2020", "dom"],
+    "esModuleInterop": true,
+    "declaration": true,
+    "strict": true,
+    "target": "es5",
+    "module": "esnext",
+    "outDir": "dist",
+    "rootDir": "src",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "noUnusedLocals": true
   }
+}
